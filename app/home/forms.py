@@ -50,7 +50,9 @@ class RegisterForm(FlaskForm):
     password = PasswordField(
         label="密码 ：",
         validators=[
-            DataRequired("密码不能为空！")
+            DataRequired("密码不能为空！"),
+            # 密码至少包含数字和英文，长度6 - 20
+            Regexp("^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,20}$", message="密码格式不正确")
         ],
         description="密码",
         render_kw={
