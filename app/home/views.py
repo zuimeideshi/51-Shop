@@ -1,6 +1,6 @@
 from . import home
 from app import db
-from app.home.forms import LoginForm,RegisterForm,PasswordForm
+from app.home.forms import RegisterForm
 from app.models import User ,Goods,Orders,Cart,OrdersDetail
 from flask import render_template, url_for, redirect, flash, session, request,make_response
 from werkzeug.security import generate_password_hash
